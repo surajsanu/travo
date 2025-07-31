@@ -41,7 +41,7 @@ userSchema.statics.hashPassword = async function (password) {
 userSchema.methods.generateAuthToken = function() {
     const token = jwt.sign({ 
         _id: this._id,
-    }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRATION || '1h' });
+    }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRATION || '24h' });
     return token;
 };
 
