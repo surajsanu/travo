@@ -3,6 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import connectDB from './db/db.js';
 import userRouter from './routes/user.route.js';
+import captainRouter from './routes/captain.route.js';
 import cookieParser from 'cookie-parser';
 
 
@@ -21,5 +22,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users',userRouter);
+app.use('/captains', captainRouter);
 
 export default app;
